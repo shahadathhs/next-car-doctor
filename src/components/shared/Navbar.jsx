@@ -57,10 +57,10 @@ const navItems = [
     title: "Home",
     path: "/",
   },
-  {
-    title: "About",
-    path: "/about",
-  },
+  // {
+  //   title: "About",
+  //   path: "/about",
+  // },
   {
     title: "Services",
     path: "/services",
@@ -69,14 +69,14 @@ const navItems = [
     title: "MyBookings",
     path: "/my-bookings",
   },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contacts",
-    path: "/contacts",
-  },
+  // {
+  //   title: "Blog",
+  //   path: "/blog",
+  // },
+  // {
+  //   title: "Contacts",
+  //   path: "/contacts",
+  // },
 ];
 
 export default Navbar;

@@ -2,6 +2,7 @@
 import React from "react";
 import ServiceCard from "../cards/ServiceCard";
 import { getServices } from "@/services/getServices";
+// import { services } from "@/lib/services";
 
 const Services = async () => {
   const { services } = await getServices();

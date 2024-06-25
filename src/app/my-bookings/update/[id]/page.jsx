@@ -7,10 +7,11 @@ import { toast } from "react-toastify";
 const Page = ({ params }) => {
   const { data } = useSession();
   const [booking, setBooking] = useState([]);
+  // console.log(booking)
 
   const loadBooking = async () => {
     const bookingDetail = await fetch(
-      `https://car-doctor-pro-nine.vercel.app/my-bookings/api/booking/${params.id}`
+      `${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/booking/${params.id}`
     );
     const data = await bookingDetail.json();
     setBooking(data.data);
@@ -24,7 +25,7 @@ const Page = ({ params }) => {
       address: event.target.address.value,
     };
     const resp = await fetch(
-      `https://car-doctor-pro-nine.vercel.app/my-bookings/api/booking/${params.id}`,
+      `${process.env.NEXT_PUBLIC_BASE_URL}/my-bookings/api/booking/${params.id}`,
       {
         method: "PATCH",
         body: JSON.stringify(updatedBooking),
@@ -47,7 +48,7 @@ const Page = ({ params }) => {
       <div className="relative  h-72">
         <Image
           className="absolute h-72 w-full left-0 top-0 object-cover"
-          src={""}
+          src={booking.img}
           alt="service"
           width={1920}
           height={1080}

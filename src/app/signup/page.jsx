@@ -13,7 +13,7 @@ const SignUpPage = () => {
       email: event.target.email.value,
       password: event.target.password.value,
     };
-    const resp = await fetch("https://car-doctor-pro-nine.vercel.app/signup/api", {
+    const resp = await fetch(`${process.env.NEXT_PUBLIC_NEXT_HOST}/signup/api`, {
       method: "POST",
       body: JSON.stringify(newUser),
       headers: {
