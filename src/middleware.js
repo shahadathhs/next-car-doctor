@@ -1,12 +1,15 @@
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 
-export const middleware = (request) => {
+export const middleware = async (request) => {
   // Access cookies from the request headers
-  const token = request.cookies.get('next-auth.session-token');
+  // local
+  // const token = request.cookies.get('next-auth.session-token');
+  // vercel deploy
+  const token = request.cookies.get('__Secure-next-auth.session-token');
   const pathname = request.nextUrl.pathname;
 
-  // console.log('Token:', token); // Log the token for debugging
+  console.log('Token:', token); // Log the token for debugging
 
   // Allow requests to API routes to pass through
   if (pathname.includes('/api/')) {
